@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update
+{% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+    <h2>Update Data</h2>
+    <form action="/Update/{{Data.Sr_no}}" method="POST">
+        <div class="mb-3">
+            <label for="Desc" class="form-label">Description</label>
+            <input type="text" class="form-control" value="{{Data.Desc}}" name="Desc" id="Desc" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="Rate" class="form-label">Rate</label>
+            <input type="number" class="form-control" value="{{Data.Rate}}" name="Rate" id="Rate">
+        </div>
+        <div class="mb-3">
+            <label for="Qty" class="form-label">Qty</label>
+            <input type="number" class="form-control" value="{{Data.Qty}}" name="Qty" id="Qty">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+<!-- <div class="container my-3">
+    <h2>Inventory Data</h2>
+
+    {% if allTodo|length == 0 %}
+    no records found
+
+    {% else %}
+    <table class="table">
+        </thead>
+        <tbody>
+            <thead>
+                <tr>
+                    <th scope="col">Sr.no</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Action</th>
+                </tr>
+
+                {% for todo in allTodo %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{todo.Desc}}</td>
+                    <td>{{todo.Rate}}</td>
+                    <td>{{todo.Qty}}</td>
+                    <td>
+                        <a href="/delete/{{todo.Sr_no}}" type="button"
+                            class="btn btn-danger btn-sm mx-1">Delete</button>
+                            <a href="/Update/{{todo.Sr_no}}" type="button"
+                                class="btn btn-primary btn-sm mx-1">Update</button>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+    {% endif %}
+
+</div> -->
+
+{% endblock body %}
